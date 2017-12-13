@@ -75,10 +75,10 @@ ECUs to be FDL Coded:
 		</group>
 	</code>
 	<code description="Increase Soft Triple Blinker to Five (5) (EXCLUDES P3.61.x)">
-			<group id="3060">
-				<function start="7" end="7" mask="00000111b">04</function>
-			</group>
-		</code>
+		<group id="3060">
+			<function start="7" end="7" mask="00000111b">04</function>
+		</group>
+	</code>
 	<code description="Turn on brake force flashing with hard braking">
 		<group id="3060">
 			<function start="16" end="16" mask="00000011b" comment="ESS_AKTIVIERBARER_AUSGANG">bremslicht_blinkend</function>
