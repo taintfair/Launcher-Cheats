@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <FDL>
 <!-- 
-2018 F80 FDL Coding options - Kip Blackwell - Dec 2018
+2018 F08X FDL Coding options - Kip Blackwell - Dec 2018
+	May also work on F03X (testing required)
 
 ECUs to be FDL Coded:
 	ACSM
@@ -38,6 +39,7 @@ ECUs to be FDL Coded:
 		</group>
 	</code>
 </cafd>
+
 <cafd id="00000F9B" name="ASD01" author="Kip_M3" series="F080,F082">
 	<code description="DISABLE Active Sound Design (also need to code HU_NBT2)">
 		<group id="3000">
@@ -46,13 +48,15 @@ ECUs to be FDL Coded:
 		</group>
 	</code>
 </cafd>
+
 <cafd id="00001a33" name="DSC" author="Kip_M3" series="F080,F082">
 	<code description="EURO MDM on US Spec Cars">
 		<group id="3000">
 			<function start="12" end="12" comment="C_Laenderkennung" mask="00000011b">ECE</function>
 		</group>
 	</code>
-</cafd>	
+</cafd>
+
 <cafd id="00000794" name="FEM_BODY" author="Kip_M3" series="F080,F082">
 	<code description="Radio and Navigation off when opening door">
 		<group id="3020">
@@ -171,6 +175,7 @@ ECUs to be FDL Coded:
 		</group>
 	</code>
 </cafd>
+
 <cafd id="00001EF6" name="HU_NBT2" author="Kip_M3" series="F080,F082">
 	<code description="Enable video files from USB">
 		<group id="3000">
@@ -321,9 +326,7 @@ ECUs to be FDL Coded:
 <!--
 US settings: 4th byte = 0C maps to LmmIdx04_****** values for Intensity, Priority, etc 
 ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
-
 ==>set 4th byte = 04 for no markers to map to LmmIdx12_****** values, which match ECE LmmIdx04_****** values
-
 -->
 			<function start="0" end="9" mask="11111111b" comment="DRL_Idx">08_Value</function>
 			<function start="10" end="19" mask="11111111b" comment="POLI1_Idx">00, 00, 00, 04, 00, 00, 08, 00, 00, 00</function>
@@ -420,9 +423,7 @@ Leave US Sidemarker setting at original (US) settings
 
 US settings: 4th byte = 0C maps to LmmIdx04_****** values for Intensity, Priority, etc 
 ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
-
 ==>set 4th byte = 0C for side markers to map to LmmIdx12_****** values, which match US LmmIdx04_****** values
-
 -->
 			<function start="0" end="9" mask="11111111b" comment="DRL_Idx">08_Value</function>
 			<function start="10" end="19" mask="11111111b" comment="POLI1_Idx">00, 00, 00, 0C, 00, 00, 08, 00, 00, 00</function>
@@ -519,6 +520,7 @@ ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
 		</group>
 	</code>
 </cafd>
+
 <cafd id="000010BA" name="LHM2" author="Almaretto" series="F030,F080">
 	<code description="F3x and F8x NGHB. Step 1 of 3 - Driver side. See LHM44/FEM_Body">
 		<group id="3000">
@@ -545,6 +547,7 @@ ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
 		</group>
 	</code>
 </cafd>
+
 <cafd id="00001082" name="TMS_03" author="Kip_M3" series="F03X,F08X">
 	<code description="Turn sidemarker LEDs OFF - Driver side. Step 1 of 2">
 		<group id="3005">
@@ -561,6 +564,7 @@ ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
 		</group>
 	</code>
 </cafd>
+
 <cafd id="00001083" name="TMS_03" author="Kip_M3" series="F03X,F08X">
 	<code description="Turn sidemarker LEDs OFF - Passenger side. Step 2 of 2">
 		<group id="3005">
@@ -577,5 +581,4 @@ ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
 		</group>
 	</code>
 </cafd>
-
 </FDL>
