@@ -61,22 +61,22 @@ ECUs to be FDL Coded:
 	</code>
 	<code description="ENABLE Rear Tail-light with DRL (8TL). Part 1 of 2. See REM">
 		<group id="3060">
-			<function start="31" end="31" mask="00110000b">TFL_S</function>
+			<function start="31" end="31" mask="00110000b" comment="TFL_MODUS">TFL_S</function>
 		</group>
 	</code>
 	<code description="Disable Horn Honk While Locking and Engine Running">
 		<group id="3040">
-			<function start="1" end="1" mask="00100000b">nicht_aktiv</function>
+			<function start="1" end="1" mask="00100000b" comment="CLM_HORN_AT_SECURE">nicht_aktiv</function>
 		</group>
 	</code>
 	<code description="Reduce Automatic Headlamp Sensitivity">
 		<group id="3130">
-			<function start="5" end="5" mask="00000111b">unempfindlich</function>
+			<function start="5" end="5" mask="00000111b" comment="RLS_DEF_FLC_SCHWELLWERT_SATZ">unempfindlich</function>
 		</group>
 	</code>
 	<code description="Increase Soft Triple Blinker to Five (5) (EXCLUDES P3.61.x)">
 		<group id="3060">
-			<function start="7" end="7" mask="00000111b">04</function>
+			<function start="7" end="7" mask="00000111b" comment="BLINKZYKLEN_ANZAHL_TIPP">04</function>
 		</group>
 	</code>
 	<code description="Turn on brake force flashing with hard braking">
@@ -114,12 +114,12 @@ ECUs to be FDL Coded:
 		<group id="3040">
 			<function start="1" end="1" mask="00000010b" comment="CLM_UNLOCK_KL15OFF_AFTER_PIA_AUTO_LOCK">aktiv</function>
 		</group>
-	</code>	
+	</code>
 	<code description="Window rolling up or down not interrupted by door opening">
 		<group id="3050">
 			<function start="0" end="0" mask="00000001b" comment="FH_Tuerauf_stop_maut">nicht_aktiv</function>
 		</group>
-	</code>	
+	</code>
 	<code description="Open/Close windows/mirror/roof from FOB and comfort access(open after 2 sec, close immediately)">
 		<group id="3053">
 			<function start="0" end="0" mask="01000000b" comment="KOMFORTOEFFNUNG_FB">aktiv</function>
@@ -193,12 +193,12 @@ ECUs to be FDL Coded:
 		<group id="3000">
 			<function start="57" end="57" mask="00110000b" comment="HIGH_END_AUDIO_MENUE">03</function>
 		</group>
-	</code>	
+	</code>
 	<code description="Enable Logic7 Sound">
 		<group id="3000">
 			<function start="57" end="57" mask="00110000b" comment="HIGH_END_AUDIO_MENUE">00</function>
 		</group>
-	</code>	
+	</code>
 	<code description="Enable Enhanced Bluetooth and Contact Pics">
 		<group id="3003">
 			<function start="3" end="3" mask="00010000b" comment="TWO_PHONES_PARALLEL">aktiv</function>
@@ -218,7 +218,7 @@ ECUs to be FDL Coded:
 			<function start="137" end="137" comment="AKD_DRIVING_TEXT_LENGTH" mask="11100000b">whole_text</function>
 			<function start="138" end="138" comment="BMWINFO_DRIVING_TEXT_LENGTH" mask="00000111b">whole_text</function>
 		</group>
-	</code>	
+	</code>
 	<code description="Disable speed lock for Owner’s Manual, Bluetooth Pairing, Touchpad, DVD, Tuner and messages">
 		<group id="3000">
 			<function start="0" end="0" mask="00100000b" comment="SL06_IBA_1">nicht_aktiv</function>
@@ -238,7 +238,7 @@ ECUs to be FDL Coded:
 			<function start="137" end="137" mask="11100000b" comment="AKD_DRIVING_TEXT_LENGTH">whole_text</function>
 			<function start="138" end="138" mask="00000111b" comment="BMWINFO_DRIVING_TEXT_LENGTH">whole_text</function>
 			<function start="146" end="146" mask="00011111b" comment="SPEEDLOCK_SPEEDVALUE_MIN">nicht_aktiv</function>
-			<function start="147" end="147" mask="00111111b" comment="SPEEDLOCK_SPEEDVALUE_MAX">nicht_aktiv</function>	  
+			<function start="147" end="147" mask="00111111b" comment="SPEEDLOCK_SPEEDVALUE_MAX">nicht_aktiv</function>
 		</group>
 	</code>
 	<code description="Remove legal disclaimers">
@@ -257,7 +257,7 @@ ECUs to be FDL Coded:
 <cafd id="000000B5" name="SM2" author="Kip_M3" series="F080,F082">
 	<code description="Enable seat heating memory infinity">
 		<group id="3000">
-			<function start="4" end="4" comment="SA_MEMORY_ZEIT" mask="00000011b">03</function> 
+			<function start="4" end="4" comment="SA_MEMORY_ZEIT" mask="00000011b">03</function>
 		</group>
 	</code>
 </cafd>
@@ -293,7 +293,7 @@ ECUs to be FDL Coded:
 			<function start="3" end="3" mask="00000001b" comment="SLD_ENABLE">aktiv</function>
 		</group>
 	</code>
-</cafd>	
+</cafd>
 
 <cafd id="000024C3" name="FLE 43/44" author="Kip_M3" series="F080,F082">
 	<code description="No Amber Enable GFHB/antidazzle high beams - Euro settings">
@@ -439,7 +439,7 @@ ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
 			<function start="130" end="139" mask="11111111b" comment="DWABLINK_Idx">07_Value</function>
 			<function start="140" end="149" mask="11111111b" comment="PanicMode_Idx">07_Value</function>
 			<function start="150" end="159" mask="11111111b" comment="RaidAlarm_Idx">11_Value</function>
-			<function start="160" end="169" mask="11111111b" comment="Blinken_Idx">10_Value</function>     
+			<function start="160" end="169" mask="11111111b" comment="Blinken_Idx">10_Value</function>
 			<function start="180" end="189" mask="11111111b" comment="SIDEMRKLGT_Idx">00, 00, 00, 0C, 00, 00, 00, 00, 00, 00</function>
 			<function start="190" end="199" mask="11111111b" comment="BLINKEN_PO_Idx">10_Value</function>
 		</group>
@@ -545,5 +545,5 @@ ECE settings: ECE values for 4th byte = 04, which disables sidemarkers
 		</group>
 	</code>
 </cafd>
-	
+
 </FDL>
